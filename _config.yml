@@ -22,8 +22,8 @@ title: Storytelling con Mapas
 email: felipe.valdez@temple.edu
 description: >- # this means to ignore newlines until "baseurl:"
   Este es un tutorial práctico sobre cómo construir mapas narrativos interactivos en la web utilizando GitHub Pages junto con MapLibre y la plantilla de Digital Democracy.
-baseurl: "/storytelling_maplibre_workshop_es" # the subpath of your site, e.g. /blog
-url: "https://fmvaldezg.codeberg.page/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/storytelling_maplibre_wkshp_es" # the subpath of your site, e.g. /blog
+url: "https://fmvaldezg.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 search_enabled: false
 back_to_top: true
 back_to_top_text: "Volver al inicio"
