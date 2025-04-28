@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+
+  <link rel="shortcut icon" href="/storytelling_maplibre_workshop_es/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/storytelling_maplibre_workshop_es/assets/css/just-the-docs-default.css">
+
+  
+
+  
+  <script type="text/javascript" src="/storytelling_maplibre_workshop_es/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Agregar capítulos | Storytelling con Mapas</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Agregar capítulos" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Este es un tutorial práctico sobre cómo construir mapas narrativos interactivos en la web utilizando GitHub Pages junto con MapLibre y la plantilla de Digital Democracy." />
+<meta property="og:description" content="Este es un tutorial práctico sobre cómo construir mapas narrativos interactivos en la web utilizando GitHub Pages junto con MapLibre y la plantilla de Digital Democracy." />
+<link rel="canonical" href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/add-chapters.html" />
+<meta property="og:url" content="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/add-chapters.html" />
+<meta property="og:site_name" content="Storytelling con Mapas" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Agregar capítulos" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Este es un tutorial práctico sobre cómo construir mapas narrativos interactivos en la web utilizando GitHub Pages junto con MapLibre y la plantilla de Digital Democracy.","headline":"Agregar capítulos","url":"https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/add-chapters.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/" class="site-title lh-tight">
+  Storytelling con Mapas
+
+</a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      
+        <ul class="nav-list"><li class="nav-list-item"><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/" class="nav-list-link">Inicio</a></li><li class="nav-list-item"><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/introduction.html" class="nav-list-link">Introducción</a></li><li class="nav-list-item"><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/prerequisites.html" class="nav-list-link">Prerrequisitos</a></li><li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/hands-on.html" class="nav-list-link">Práctica</a><ul class="nav-list "><li class="nav-list-item "><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/fork-repo.html" class="nav-list-link">Clonar La Plantilla de Narración</a></li><li class="nav-list-item "><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/edit-configjs.html" class="nav-list-link">Editar el archivo config.js</a></li><li class="nav-list-item "><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/add-mapstyle.html" class="nav-list-link">Agregar un Estilo de Mapa a tu mapa</a></li><li class="nav-list-item  active"><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/add-chapters.html" class="nav-list-link active">Agregar capítulos</a></li><li class="nav-list-item "><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/preview-storymap.html" class="nav-list-link">Vista previa del mapa</a></li><li class="nav-list-item "><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/deploy-page.html" class="nav-list-link">Implementar mapa en la web</a></li></ul></li></ul>
+
+      
+    </nav>
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+      
+      
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list">
+              
+                <li class="breadcrumb-nav-list-item"><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/hands-on.html">Práctica</a></li>
+              
+              <li class="breadcrumb-nav-list-item"><span>Agregar capítulos</span></li>
+            </ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+        
+          <h1 id="agregar-capítulos">
+        
+        
+          <a href="#agregar-capítulos" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Agregar capítulos
+        
+        
+      </h1>
+
+<p>Ahora que tienes la configuración básica de tu mapa narrativo, es hora de agregar datos a tus capítulos.
+Los capítulos contienen el contenido de tu historia. Cada uno es un recuadro con texto y multimedia que se desplazará sobre tu mapa base.</p>
+
+<p>Necesitarás agregar y configurar algunos detalles en el archivo <code class="language-plaintext highlighter-rouge">config.js</code> para crear los capítulos de tu historia.
+A partir de la línea 18 del archivo <code class="language-plaintext highlighter-rouge">config.js</code>, verás los capítulos y sus propiedades.</p>
+
+<p>Al final de esta página tienes un detalle sobre la función de cada propiedad de los capítulos en el archivo <code class="language-plaintext highlighter-rouge">config.js</code>.
+Repasaremos las propiedades básicas en los siguientes pasos.</p>
+    
+      <h3 id="1-configurando-tu-primer-capítulo">
+        
+        
+          <a href="#1-configurando-tu-primer-capítulo" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <em class="circle circle-blue">1</em> Configurando tu primer capítulo.
+        
+        
+      </h3>
+
+<p class="label label-step">Paso 1</p>
+
+<p>Agrega un <code class="language-plaintext highlighter-rouge">id</code> a tu primer capítulo. Simplemente escribe cualquier texto que identifique tu primer capítulo.</p>
+
+<p class="label label-green">Entrada</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>20  id: 'mi-primer-capitulo'
+</code></pre></div></div>
+<p class="warn">Recuerda usar guiones para separar palabras y letras minúsculas para el id del capítulo.</p>
+
+<p><img src="../img/chapters1.png" alt="captura de pantalla del id del capítulo" /></p>
+
+<p class="label label-step">Paso 2</p>
+
+<p>Agrega un <code class="language-plaintext highlighter-rouge">title</code> a tu capítulo. En la línea 23, agrega un texto para que sea el título de tu capítulo.</p>
+
+<p class="label label-green">Entrada</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>23  title: 'Capítulo 1'
+</code></pre></div></div>
+<p><img src="../img/chapters2.png" alt="captura de pantalla de la propiedad título del capítulo" /></p>
+
+<p class="label label-step">Paso 3</p>
+
+<p>Agrega una <code class="language-plaintext highlighter-rouge">description</code> a tu capítulo. Esta sección contendrá el texto principal de este capítulo. En la línea 29, agrega todo el texto para este capítulo.</p>
+
+<p class="label label-green">Entrada</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>29  description: 'Esta es la mejor historia del mundo. Tiene lugar en la ciudad de Filadelfia'
+</code></pre></div></div>
+<p><img src="../img/chapters3.png" alt="captura de pantalla de la propiedad de título del capítulo" /></p>
+    
+      <h3 id="2-agregando-una-imagen-a-tu-capítulo">
+        
+        
+          <a href="#2-agregando-una-imagen-a-tu-capítulo" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <em class="circle circle-blue">2</em> Agregando una imagen a tu capítulo.
+        
+        
+      </h3>
+
+<p class="label label-step">Paso 1</p>
+
+<p>Dale a la imagen que vas a usar un nombre simple pero fácil de identificar. Por ejemplo <code class="language-plaintext highlighter-rouge">img_capitulo1.png</code>.</p>
+
+<p class="label label-step">Paso 2</p>
+
+<ol>
+  <li>
+    <p>En el navegador de tu sistema, navega hasta la carpeta del repositorio <code class="language-plaintext highlighter-rouge">maplibre-storymap</code>.</p>
+  </li>
+  <li>
+    <p>Dentro de esta carpeta verás otra carpeta llamada <code class="language-plaintext highlighter-rouge">images</code>.</p>
+  </li>
+  <li>
+    <p>Guarda tu imagen <code class="language-plaintext highlighter-rouge">img-capitulo1.png</code> en esta carpeta.</p>
+  </li>
+</ol>
+
+<p><img src="../img/chapters4.png" alt="captura de pantalla de la carpeta de imágenes del repositorio" /></p>
+
+<p class="label label-step">Paso 3</p>
+
+<p>Regresa al archivo <code class="language-plaintext highlighter-rouge">config.js</code> en <code class="language-plaintext highlighter-rouge">Visual Studio Code</code> y agrega lo siguiente:</p>
+
+<p class="label label-green">Entrada</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>24  image: './images/img-capitulo1.png'
+</code></pre></div></div>
+<p><img src="../img/chapters5.png" alt="captura de pantalla del archivo config.js" /></p>
+    
+      <h3 id="3-configurando-la-ubicación-del-capítulo-en-el-mapa">
+        
+        
+          <a href="#3-configurando-la-ubicación-del-capítulo-en-el-mapa" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <em class="circle circle-blue">3</em> Configurando la ubicación del capítulo en el mapa.
+        
+        
+      </h3>
+
+<p>Otra característica de los mapas narrativos es la capacidad de centrar el mapa base en un punto específico para destacar la historia que estás contando. En esta demostración, estamos contando una historia sobre la ciudad de Filadelfia, vamos a ubicar el mapa para que muestre una vista general de la ciudad con el punto central en el Ayuntamiento.</p>
+
+<p>La vista del mapa está controlada por las propiedades bajo <code class="language-plaintext highlighter-rouge">location:</code> desde la línea 31 hasta la 34 en el archivo <code class="language-plaintext highlighter-rouge">config.js</code>. Las dos primeras opciones, <code class="language-plaintext highlighter-rouge">center</code> y <code class="language-plaintext highlighter-rouge">zoom</code> son las más importantes ya que establecen las coordenadas donde se centra el mapa y cuán alejado o acercado está. Para ayudarte a decidir los valores de estas propiedades, vamos a usar la aplicación web <a href="https://labs.mapbox.com/location-helper/#3/40.78/-73.97">Location Helper</a>.</p>
+
+<p class="label label-step">Paso 1</p>
+
+<p>En tu navegador de internet, navega hasta la aplicación web <a href="https://labs.mapbox.com/location-helper/#3/40.78/-73.97">Location Helper</a>.</p>
+
+<p>Verás un mapa y una ventana con algunos valores numéricos para <code class="language-plaintext highlighter-rouge">center (array)</code>, <code class="language-plaintext highlighter-rouge">center (object)</code>, <code class="language-plaintext highlighter-rouge">zoom</code>, <code class="language-plaintext highlighter-rouge">bearing</code>, <code class="language-plaintext highlighter-rouge">pitch</code> y otros en el lado izquierdo de la pantalla. Observa un círculo que marca el centro del mapa.</p>
+
+<p>Navega por el mapa usando los <code class="language-plaintext highlighter-rouge">Controles de navegación</code> o la <code class="language-plaintext highlighter-rouge">Barra de búsqueda</code> en la esquina superior derecha de la pantalla, hasta que veas el mapa como quieres que se muestre en tu capítulo.</p>
+
+<p><img src="../img/chapters6.png" alt="captura de pantalla de la aplicación web Location Helper" /></p>
+
+<p>En esta demostración, escribimos en la barra de búsqueda <code class="language-plaintext highlighter-rouge">Philadelphia, Pennsylvania</code> y el mapa resultante se ve bien para el propósito del primer capítulo.</p>
+
+<p><img src="../img/chapters7.png" alt="captura de pantalla de la aplicación web Location Helper" /></p>
+
+<p class="label label-step">Paso 2</p>
+
+<p>Copia los valores en la propiedad <code class="language-plaintext highlighter-rouge">center (array)</code> de la aplicación web <code class="language-plaintext highlighter-rouge">Location Helper</code> y pégalos en la propiedad <code class="language-plaintext highlighter-rouge">center:</code> en la línea 31 del archivo <code class="language-plaintext highlighter-rouge">config.js</code> que tienes abierto en Visual Studio Code.</p>
+
+<p class="label label-green">Entrada</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>31  center: [-75.15911, 39.97307],
+</code></pre></div></div>
+<p class="warn">Ten en cuenta que las coordenadas están dentro de los símbolos [ ] y separadas por una coma.</p>
+
+<p><img src="../img/chapters8.png" alt="captura de pantalla de las coordenadas del centro" /></p>
+
+<p class="label label-step">Paso 3</p>
+
+<p>Copia los valores en la propiedad <code class="language-plaintext highlighter-rouge">zoom</code> de la aplicación web <code class="language-plaintext highlighter-rouge">Location Helper</code> y pégalos en la propiedad <code class="language-plaintext highlighter-rouge">zoom:</code> en la línea 32 del archivo <code class="language-plaintext highlighter-rouge">config.js</code> que tienes abierto en Visual Studio Code.</p>
+
+<p class="label label-green">Entrada</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>32  zoom: 10.89,
+</code></pre></div></div>
+
+<p><img src="../img/chapters9.png" alt="captura de pantalla del nivel de zoom" /></p>
+    
+      <h3 id="4-agregando-más-capítulos-a-tu-mapa-narrativo">
+        
+        
+          <a href="#4-agregando-más-capítulos-a-tu-mapa-narrativo" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <em class="circle circle-blue">4</em> Agregando más capítulos a tu mapa narrativo.
+        
+        
+      </h3>
+
+<p>La plantilla de Digital Democracy tiene dos capítulos agregados al mapa.</p>
+
+<p>Un capítulo tiene la siguiente estructura:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+            id: 'id-del-capitulo',
+            alignment: 'left',
+            hidden: false,
+            title: 'Título del capítulo',
+            image: './images/nombre.png',
+            caption: 'Leyenda de la imagen fuente',
+            website: '&lt;a href="" target="_blank"&gt;Sitio web&lt;/a&gt;',
+            author: 'Narrador Digital',
+            legend: '&lt;span style="font-size: 0.85em;"&gt;&lt;em&gt;Contenido de la leyenda&lt;/em&gt;&lt;/span&gt;',
+            description: 'El contenido de tu capítulo',
+            location: {
+                center: [-75.15911, 39.97307],
+                zoom: 10.89,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            spinGlobe: false,
+            mapInteractive: true,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+</code></pre></div></div>
+<p>Para agregar nuevos capítulos a tu mapa narrativo, simplemente <code class="language-plaintext highlighter-rouge">copia</code> este texto y pégalo justo después del símbolo <code class="language-plaintext highlighter-rouge">}</code> que cierra el capítulo anterior. Asegúrate de incluir una <code class="language-plaintext highlighter-rouge">,</code> después del símbolo y pegar el texto antes del <code class="language-plaintext highlighter-rouge">]</code> que cierra la sección de capítulos en el código.</p>
+
+<p><img src="../img/chapters10.png" alt="captura de pantalla del lugar para pegar el código" /></p>
+
+<p>Agrega tantos capítulos como quieras.</p>
+
+<p>No olvides agregar los datos y especificaciones necesarios en cada capítulo. En la siguiente sección de este tutorial aprenderás cómo previsualizar tu mapa narrativo.</p>
+
+<p class="note">Adelante, juega cambiando algunas configuraciones del capítulo como <code class="language-plaintext highlighter-rouge">alignment</code> y <code class="language-plaintext highlighter-rouge">rotateAnimation</code>.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Propiedad</th>
+      <th>Función</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">id:</code></td>
+      <td>Un ID en estilo slug para el capítulo. Esto es leído por JavaScript que impulsa la aplicación y se asigna como un <code class="language-plaintext highlighter-rouge">id</code> HTML para el elemento <code class="language-plaintext highlighter-rouge">div</code> que contiene el resto de la historia. Un formato de buenas prácticas sería usar kebab case, como <code class="language-plaintext highlighter-rouge">mi-historia-capitulo-1</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">alignment:</code></td>
+      <td>Define dónde debe aparecer el texto de la historia sobre el mapa. Las opciones son <code class="language-plaintext highlighter-rouge">center</code>, <code class="language-plaintext highlighter-rouge">left</code>, <code class="language-plaintext highlighter-rouge">right</code> y <code class="language-plaintext highlighter-rouge">full</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hidden:</code></td>
+      <td>Establece la visibilidad del capítulo como oculta cuando es <code class="language-plaintext highlighter-rouge">true</code>. El capítulo seguirá activando una transición de mapa y capa.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">title:</code></td>
+      <td>El título de la sección, mostrado en un elemento <code class="language-plaintext highlighter-rouge">h3</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">image:</code></td>
+      <td>La ruta a una imagen para mostrar en esta sección.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">caption:</code></td>
+      <td>Agrega un pie de foto para la imagen.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">author:</code></td>
+      <td>Agrega un autor para mostrar en la parte inferior del capítulo.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">website:</code></td>
+      <td>Agrega un sitio web para mostrar en la parte inferior del capítulo.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">legend:</code></td>
+      <td>Agrega un cuadro de leyenda HTML para este capítulo. <code class="language-plaintext highlighter-rouge">legend</code> también debe estar habilitado en la configuración anterior.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">description:</code></td>
+      <td>El contenido principal de la historia para la sección. Esto debe estar alineado con lo que el lector está viendo en el mapa. En la versión básica, este campo se renderizará como HTML. Se pueden incluir imágenes, enlaces y otros elementos como HTML.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">location:</code></td>
+      <td>Detalles sobre la visualización del mapa y la vista de la cámara. <code class="language-plaintext highlighter-rouge">center</code>: Coordenadas centrales del mapa, como longitud, latitud. <code class="language-plaintext highlighter-rouge">zoom</code>: Nivel de zoom del mapa. <code class="language-plaintext highlighter-rouge">pitch</code>: Ángulo de la vista del mapa. 0 es recto hacia abajo, y 60 está muy inclinado. <code class="language-plaintext highlighter-rouge">bearing</code>: Grados de rotación en sentido horario desde el Norte (0). Los valores negativos representan rotación en sentido antihorario.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mapAnimation:</code></td>
+      <td>Define el tipo de animación para la transición entre ubicaciones. Esta propiedad admite animaciones <code class="language-plaintext highlighter-rouge">flyTo</code>, <code class="language-plaintext highlighter-rouge">easeTo</code> y <code class="language-plaintext highlighter-rouge">jumpTo</code>. Si no se especifica, por defecto es <code class="language-plaintext highlighter-rouge">flyTo</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rotateAnimation:</code></td>
+      <td>Inicia una animación de rotación lenta al final de la transición del mapa cuando se establece en <code class="language-plaintext highlighter-rouge">true</code>. El mapa rotará 90 grados en 24 segundos.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mapInteractive:</code></td>
+      <td>Cuando se establece en <code class="language-plaintext highlighter-rouge">true</code>, configura este capítulo para que sea interactivo, permitiendo al usuario desplazarse y hacer zoom en el mapa, y agrega controles de navegación.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">callback:</code></td>
+      <td>Acepta el nombre de una función JavaScript y ejecuta la función. Usa esto si tienes código personalizado que quieres ejecutar para un capítulo, como activar o desactivar una leyenda, agregar datos de una solicitud API o mostrar un gráfico interactivo.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">onChapterEnter:</code></td>
+      <td>Capas para ser mostradas/ocultadas/silenciadas cuando la sección se vuelve activa. <code class="language-plaintext highlighter-rouge">layer</code>: Nombre de la capa como se asigna en el estilo MapLibre. <code class="language-plaintext highlighter-rouge">opacity</code>: La opacidad para mostrar la capa. <code class="language-plaintext highlighter-rouge">0</code> es completamente transparente, <code class="language-plaintext highlighter-rouge">1</code> es completamente opaco. <code class="language-plaintext highlighter-rouge">duration</code>: La duración de la transición de opacidad, numérica, en milisegundos. El valor predeterminado es 300. Este es un parámetro opcional y puede omitirse.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">onChapterExit:</code></td>
+      <td>Igual que <code class="language-plaintext highlighter-rouge">onChapterEnter</code> excepto que se activa cuando la sección se vuelve inactiva.</td>
+    </tr>
+  </tbody>
+</table></div>
+        
+
+        
+
+        
+          <hr>
+          <footer>
+            
+              <p><a href="#top" id="back-to-top">Volver al inicio</a></p>
+            
+            
+              <p class="text-small text-grey-dk-000 mb-0"><a href="https://felipevaldez.com" target="_blank">Más información</a></p>
+            
+
+            
+          </footer>
+        
+
+      </div>
+    </div>
+
+    
+  </div>
+</body>
+</html>
+

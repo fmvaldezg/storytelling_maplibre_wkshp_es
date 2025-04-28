@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+
+  <link rel="shortcut icon" href="/storytelling_maplibre_workshop_es/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/storytelling_maplibre_workshop_es/assets/css/just-the-docs-default.css">
+
+  
+
+  
+  <script type="text/javascript" src="/storytelling_maplibre_workshop_es/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Agregar un Estilo de Mapa a tu mapa | Storytelling con Mapas</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Agregar un Estilo de Mapa a tu mapa" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Este es un tutorial práctico sobre cómo construir mapas narrativos interactivos en la web utilizando GitHub Pages junto con MapLibre y la plantilla de Digital Democracy." />
+<meta property="og:description" content="Este es un tutorial práctico sobre cómo construir mapas narrativos interactivos en la web utilizando GitHub Pages junto con MapLibre y la plantilla de Digital Democracy." />
+<link rel="canonical" href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/add-mapstyle.html" />
+<meta property="og:url" content="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/add-mapstyle.html" />
+<meta property="og:site_name" content="Storytelling con Mapas" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Agregar un Estilo de Mapa a tu mapa" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Este es un tutorial práctico sobre cómo construir mapas narrativos interactivos en la web utilizando GitHub Pages junto con MapLibre y la plantilla de Digital Democracy.","headline":"Agregar un Estilo de Mapa a tu mapa","url":"https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/add-mapstyle.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/" class="site-title lh-tight">
+  Storytelling con Mapas
+
+</a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      
+        <ul class="nav-list"><li class="nav-list-item"><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/" class="nav-list-link">Inicio</a></li><li class="nav-list-item"><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/introduction.html" class="nav-list-link">Introducción</a></li><li class="nav-list-item"><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/prerequisites.html" class="nav-list-link">Prerrequisitos</a></li><li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/hands-on.html" class="nav-list-link">Práctica</a><ul class="nav-list "><li class="nav-list-item "><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/fork-repo.html" class="nav-list-link">Clonar La Plantilla de Narración</a></li><li class="nav-list-item "><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/edit-configjs.html" class="nav-list-link">Editar el archivo config.js</a></li><li class="nav-list-item  active"><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/add-mapstyle.html" class="nav-list-link active">Agregar un Estilo de Mapa a tu mapa</a></li><li class="nav-list-item "><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/add-chapters.html" class="nav-list-link">Agregar capítulos</a></li><li class="nav-list-item "><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/preview-storymap.html" class="nav-list-link">Vista previa del mapa</a></li><li class="nav-list-item "><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/handson/deploy-page.html" class="nav-list-link">Implementar mapa en la web</a></li></ul></li></ul>
+
+      
+    </nav>
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+      
+      
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list">
+              
+                <li class="breadcrumb-nav-list-item"><a href="https://fmvaldezg.codeberg.page//storytelling_maplibre_workshop_es/content/hands-on.html">Práctica</a></li>
+              
+              <li class="breadcrumb-nav-list-item"><span>Agregar un Estilo de Mapa a tu mapa</span></li>
+            </ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+        
+          <h1 id="agregar-un-estilo-de-mapa">
+        
+        
+          <a href="#agregar-un-estilo-de-mapa" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Agregar un Estilo de Mapa
+        
+        
+      </h1>
+
+<p>Los mapas web se muestran utilizando un conjunto de reglas que tratan cada elemento del mapa de una manera específica para renderizarlos usando los colores, iconos y formas que ves en tu pantalla. Estas reglas se almacenan en un archivo que puede estar en tu computadora o puede ser accedido a través de una URL.</p>
+
+<p>Utilizaremos los OpenMapStyles de <a href="https://openmaptiles.org/">MapTiler</a>. Si no tienes una cuenta de MapTiler, consulta la sección de prerrequisitos para crear una cuenta gratuita.</p>
+
+<p>Sigue estos pasos para agregar un estilo de mapa a tu mapa narrativo.</p>
+    
+      <h3 id="1-inicia-sesión-en-tu-cuenta-de-maptiler">
+        
+        
+          <a href="#1-inicia-sesión-en-tu-cuenta-de-maptiler" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <em class="circle circle-blue">1</em> Inicia sesión en tu cuenta de <code class="language-plaintext highlighter-rouge">MapTiler</code>.
+        
+        
+      </h3>
+
+<p>En tu navegador web, ve a <a href="https://cloud.maptiler.com/auth/widget?next=https://cloud.maptiler.com/maps/">este enlace</a>.
+Ingresa tu nombre de usuario y contraseña.</p>
+
+<p><img src="../img/style0.png" alt="Captura de pantalla de la página de inicio de sesión de MapTiler" /></p>
+    
+      <h3 id="2-selecciona-el-estilo-de-mapa-que-quieres-usar">
+        
+        
+          <a href="#2-selecciona-el-estilo-de-mapa-que-quieres-usar" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <em class="circle circle-blue">2</em> Selecciona el estilo de mapa que quieres usar.
+        
+        
+      </h3>
+
+<p>En la pantalla de MapTiler Maps verás una lista de estilos abiertos predefinidos.</p>
+
+<p>Haz clic en <code class="language-plaintext highlighter-rouge">DataViz</code> si quieres seguir este tutorial, o cualquier otro estilo que prefieras.</p>
+
+<p><img src="../img/style1.png" alt="Captura de pantalla de la página de inicio de sesión de MapTiler" /></p>
+
+<p class="note">Puedes crear tus propios estilos usando MapTiler OpenMapTyles haciendo clic en el botón <code class="language-plaintext highlighter-rouge">New map</code>. Puedes seleccionar qué capas mostrar y cómo.</p>
+    
+      <h3 id="3-copia-la-url-del-estilo-vectorial">
+        
+        
+          <a href="#3-copia-la-url-del-estilo-vectorial" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <em class="circle circle-blue">3</em> Copia la URL del estilo vectorial
+        
+        
+      </h3>
+
+<p>Copia la URL del estilo. Puedes usar el botón <code class="language-plaintext highlighter-rouge">Copy link</code>.</p>
+
+<p class="warn">Asegúrate de usar el <code class="language-plaintext highlighter-rouge">vector style</code> que se encuentra bajo el título ‘Use vector style’.</p>
+
+<p><img src="../img/style2.png" alt="Captura de pantalla de la página de inicio de sesión de MapTiler" /></p>
+    
+      <h3 id="4-pega-la-url-del-estilo-en-el-archivo-configjs">
+        
+        
+          <a href="#4-pega-la-url-del-estilo-en-el-archivo-configjs" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <em class="circle circle-blue">4</em> Pega la URL del estilo en el archivo config.js
+        
+        
+      </h3>
+
+<p>Regresa al archivo <code class="language-plaintext highlighter-rouge">config.js</code> que tienes abierto en <code class="language-plaintext highlighter-rouge">Visual Studio Code</code> y pega la URL que acabas de copiar en la propiedad <code class="language-plaintext highlighter-rouge">style:</code>.</p>
+
+<p class="label label-green">Input</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2  style: 'https://api.maptiler.com/maps/dataviz/style.json?key={tu_propia_clave}'
+</code></pre></div></div>
+<p><img src="../img/style3.png" alt="captura de pantalla mostrando el copiar y pegar de la URL del estilo" /></p>
+
+<p class="note">El estilo puede definirse usando una URL, como en esta demostración, o usando un archivo <code class="language-plaintext highlighter-rouge">.json</code>. Si creas tu propio estilo y quieres usar un archivo json, debes guardar ese archivo en la carpeta <code class="language-plaintext highlighter-rouge">map</code> en el repositorio y apuntar la propiedad style a él usando <code class="language-plaintext highlighter-rouge">style: '\map\style.json'</code>. Los estilos personalizados pueden crearse y guardarse como archivos json en aplicaciones como <a href="https://maputnik.github.io/">Maputnik</a> o <a href="https://www.mapbox.com/mapbox-studio">Mapbox Studio</a>.</p>
+        
+
+        
+
+        
+          <hr>
+          <footer>
+            
+              <p><a href="#top" id="back-to-top">Volver al inicio</a></p>
+            
+            
+              <p class="text-small text-grey-dk-000 mb-0"><a href="https://felipevaldez.com" target="_blank">Más información</a></p>
+            
+
+            
+          </footer>
+        
+
+      </div>
+    </div>
+
+    
+  </div>
+</body>
+</html>
+
